@@ -1,3 +1,3 @@
-# Winter Proyect
+# Winter Project
 
 ## -- WIP
