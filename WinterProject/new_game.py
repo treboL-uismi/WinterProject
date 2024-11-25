@@ -13,7 +13,13 @@ def easy_game():
         rx.button("Modo fácil"),
         href="/easy_mode"
     )
-    
+
+def hard_game():
+    return rx.link(
+        rx.button("Modo difícil"),
+        href="/hard_mode"
+    )
+
 def go_back():
     return rx.link(
         rx.button("Atrás"),
@@ -27,6 +33,7 @@ def new_Game_page() -> rx.Component:
         rx.vstack(
             rx.heading("Nueva Partida...", size="9"),
             easy_game(),
+            hard_game(),
             go_back(),
             spacing="5",
             justify="center",

@@ -11,7 +11,7 @@ class State(rx.State):
 def start_game():
     return rx.link(
         rx.button("Start"),
-        href="/easy_game"
+        href="/hard_game"
     )
 
 def go_back():
@@ -20,12 +20,12 @@ def go_back():
         href="/new_Game_page"
     )
     
-@rx.page(route="/easy_mode", title="Easy Mode")
-def easy_Mode() -> rx.Component:
+@rx.page(route="/hard_mode", title="Hard Mode")
+def hard_Mode() -> rx.Component:
     return rx.container(
         rx.color_mode.button(position="top-right"),
         rx.vstack(
-            rx.heading("Modo Fácil...", size="9"),
+            rx.heading("Modo Difícil...", size="9"),
             start_game(),
             go_back(),
             spacing="5",
