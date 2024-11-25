@@ -1,9 +1,8 @@
-"""Welcome to Reflex! This file outlines the steps to create a basic app."""
+"""rx.code(f"{config.app_name}/{config.app_name}.py")"""
 
 import reflex as rx
 
 from rxconfig import config
-
 
 class State(rx.State):
     """The app state."""
@@ -11,29 +10,26 @@ class State(rx.State):
     ...
 
 
+def new_game():
+    return rx.link(
+        rx.button("Nueva Partida"),
+        href="/new_Game_page",
+        external="True",
+    )
+    
+@rx.page(route="/", title="Index")
 def index() -> rx.Component:
     # Welcome Page (Index)
     return rx.container(
         rx.color_mode.button(position="top-right"),
         rx.vstack(
-            rx.heading("Welcome to Reflex!", size="9"),
-            rx.text(
-                "Get started by editing ",
-                rx.code(f"{config.app_name}/{config.app_name}.py"),
-                size="5",
-            ),
-            rx.link(
-                rx.button("Check out our docs!"),
-                href="https://reflex.dev/docs/getting-started/introduction/",
-                is_external=True,
-            ),
-            spacing="5",
+            rx.heading("¿Quién es quién?", size="9"), # heading
+            new_game(),  #boton
+            spacing="5", #configuracion
             justify="center",
             min_height="85vh",
         ),
         rx.logo(),
     )
 
-
 app = rx.App()
-app.add_page(index)
