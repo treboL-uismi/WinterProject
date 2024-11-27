@@ -11,26 +11,27 @@ card = [(0, 0, 510, 771),
         (1020, 0, 1530, 771),
         (1530, 0, 2040, 771),
         (0, 771, 510, 1542),
-        (510, 771, 1530, 1542),
+        (510, 771, 1020, 1542),
         (1020, 771, 1530, 1542),
         (1530, 771, 2040, 1542)]
 
 
+
 def game_board():
     return rx.grid(
-        rx.foreach(
-            rx.Var.range(8),
-            lambda i: rx.card(rx.inset(rx.image(src=img.crop(card[0]),
-                         width="100%",
-                         height="auto",
-                         ),
-                        side="center",
-                        pb="current",
-            ),          
-          ),
-        ),
+        rx.card(rx.button(rx.inset(rx.image(src=img.crop(card[0])), side="center", pb="current")), as_child=True, radius="medium", variant="ghost"),
+        rx.card(rx.button(rx.inset(rx.image(src=img.crop(card[1])), side="center", pb="current")), as_child=True, radius="medium", variant="ghost"),
+        rx.card(rx.button(rx.inset(rx.image(src=img.crop(card[2])), side="center", pb="current")), as_child=True, radius="medium", variant="ghost"),
+        rx.card(rx.button(rx.inset(rx.image(src=img.crop(card[3])), side="center", pb="current")), as_child=True, radius="medium", variant="ghost"),
+        rx.card(rx.button(rx.inset(rx.image(src=img.crop(card[4])), side="center", pb="current")), as_child=True, radius="medium", variant="ghost"),
+        rx.card(rx.button(rx.inset(rx.image(src=img.crop(card[5])), side="center", pb="current")), as_child=True, radius="medium", variant="ghost"),
+        rx.card(rx.button(rx.inset(rx.image(src=img.crop(card[6])), side="center", pb="current")), as_child=True, radius="medium", variant="ghost"),
+        rx.card(rx.button(rx.inset(rx.image(src=img.crop(card[7])), side="center", pb="current")), as_child=True, radius="medium", variant="ghost"),
+        
         columns="4",
-        spacing="4",
+        spacing="6",
+        align_items="start",
+        flex_wrap="wrap",
         width="100%",
     )
 
