@@ -25,6 +25,27 @@ def go_back():
         href="/new_Game_page"
     )
 
+def qa(question: str, answer: str) -> rx.Component:
+    return rx.box(
+        rx.box(question, text_align="right"),
+        rx.box(answer, text_align="left"),
+        margin_y="1em",
+    )
+
+def chat() -> rx.Component:
+    qa_pairs = [
+        ("Pregunta", "Respuesta"),
+    ]
+    return rx.box(
+        *[qa(q, a) for q, a in qa_pairs]
+    )
+
+def action_bar() -> rx.Component:
+    return rx.hstack(
+        rx.input(placeholder="Escribe tu pregunta"),
+        rx.button("Enviar"),
+    )
+
 @rx.page(route="/hard_game", title="Hard Game")
 def hard_Game() -> rx.Component:
     return rx.container(
@@ -34,6 +55,8 @@ def hard_Game() -> rx.Component:
             game_board(),
             restart_game(),
             go_back(),
+            chat(),
+            action_bar(),
             spacing="5",
             justify="center",
             min_height="85vh",
