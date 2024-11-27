@@ -1,5 +1,4 @@
 import reflex as rx
-
 from rxconfig import config
 
 def game_board():
@@ -50,16 +49,27 @@ def action_bar() -> rx.Component:
 def hard_Game() -> rx.Component:
     return rx.container(
         rx.color_mode.button(position="top-right"),
-        rx.vstack(
-            rx.heading("Time left -", size="9"),
-            game_board(),
-            restart_game(),
-            go_back(),
-            chat(),
-            action_bar(),
-            spacing="5",
-            justify="center",
-            min_height="85vh",
+        rx.hstack(
+            rx.box(
+                rx.vstack(
+                    rx.heading("Time left -", size="9"),
+                    game_board(),
+                    restart_game(),
+                    go_back(), 
+                ),
+                width="70%",
+                padding="1em",
+                justify="start",
+            ),
+            rx.box(
+                rx.vstack(
+                    chat(),  
+                    action_bar(),
+                ),
+                width="30%",
+                padding="1em",
+                justify="start", 
+            ),
         ),
         rx.logo(),
     )

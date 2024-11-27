@@ -1,6 +1,4 @@
 import reflex as rx
-from typing import List
-
 from rxconfig import config
 
 def game_board():
@@ -33,6 +31,7 @@ def qa(question: str, answer: str) -> rx.Component:
         margin_y="1em",
     )
 
+
 def chat() -> rx.Component:
     qa_pairs = [
         ("Pregunta", "Respuesta"),
@@ -47,21 +46,31 @@ def action_bar() -> rx.Component:
         rx.button("Enviar"),
     )
 
-
 @rx.page(route="/easy_game", title="Easy Game")
 def easy_Game() -> rx.Component:
     return rx.container(
         rx.color_mode.button(position="top-right"),
-        rx.vstack(
-            rx.heading("Time left -", size="9"),
-            game_board(),
-            restart_game(),
-            go_back(),
-            chat(),
-            action_bar(),
-            spacing="5",
-            justify="center",
-            min_height="85vh",
+        rx.hstack(
+            rx.box(
+                rx.vstack(
+                    rx.heading("Time left -", size="9"),
+                    game_board(),
+                    restart_game(),
+                    go_back(), 
+                ),
+                width="70%",
+                padding="1em",
+                justify="start",
+            ),
+            rx.box(
+                rx.vstack(
+                    chat(),  
+                    action_bar(),
+                ),
+                width="30%",
+                padding="1em",
+                justify="start", 
+            ),
         ),
         rx.logo(),
     )
