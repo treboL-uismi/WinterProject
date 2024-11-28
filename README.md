@@ -1,6 +1,5 @@
-# **Winter Project - [¿Quién es quién?](https://es.wikipedia.org/wiki/Guess_Who%3F)**
-## - Versión 0.5.1
-### - Hecho por treboL-uismi y JPRojasVas
+# **Winter Project - [¿Quién es quién?](https://es.wikipedia.org/wiki/Guess_Who%3F) Version 0.5.1**
+- Hecho por treboL-uismi y JPRojasVas
 
 # - *Objetivo principal*
 Crear un ¿Quién es quién? con el framework open-source de **[Reflex](https://reflex.dev/)**.
