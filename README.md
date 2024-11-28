@@ -1,3 +1,9 @@
+<p aling="center">
+    <img width="300" src="https://procomun.intef.es/files/articulos/guess_who_logo_side_es_b.jpg" alt="Logo QuienEsQuien">
+</p>
+
+<hr>
+
 # **Winter Project - [¿Quién es quién?](https://es.wikipedia.org/wiki/Guess_Who%3F) Version 0.5.1**
 - Hecho por treboL-uismi y JPRojasVas
 
