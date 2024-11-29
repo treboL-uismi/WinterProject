@@ -84,7 +84,6 @@ def hard_Game() -> rx.Component:
     return rx.container(
         rx.color_mode.button(position="top-right"),
         rx.hstack(
-            # Sección de la cuadrícula de imágenes
             rx.box(
                 rx.vstack(
                     rx.heading("Time left -", size="9"),
@@ -98,7 +97,6 @@ def hard_Game() -> rx.Component:
                 border_radius="lg",
                 shadow="md",
             ),
-
             rx.box(
                 rx.vstack(
                     chat(),
