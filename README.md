@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p aling="center">
     <img width="300" src="https://procomun.intef.es/files/articulos/guess_who_logo_side_es_b.jpg" alt="Logo QuienEsQuien">
 </p>
@@ -16,3 +17,6 @@ Crear un ¿Quién es quién? con el framework open-source de **[Reflex](https://
 + Compuesto por varios modos de dificultad,
     - Modo Fácil (8 tarjetas)
     - Modo Difícil (16 tarjetas)
+=======
+# Winter Project
+>>>>>>> main
