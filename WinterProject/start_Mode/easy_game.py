@@ -4,6 +4,17 @@ from PIL import Image
 
 img = Image.open(r"assets\personajes_qsq_02.png")
 
+easyChr = {
+    "Maria" : ["pelo castaño"],
+    "Frans" : ["boca pequeña"],
+    "Herman" : ["calvo"],
+    "Bernard" : ["gorro"],
+    "Philip" : ["barba", "pelo castaño"],
+    "Eric" : ["rubio", "sombrero"],
+    "Charles" : ["rubio", "bigote"],
+    "Peter" : ["nariz grande", "boca grande", "pelo blanco"]
+}
+
 card = [
     (0, 0, 510, 771),
     (510, 0, 1020, 771),
