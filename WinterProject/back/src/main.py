@@ -1,5 +1,4 @@
 import random
-from list_names import easyChr, hardChr
 
 def randChr(chrDict: dict[str, list[str]]) -> str:
     chr = random.choice(list(chrDict.items()))
@@ -7,6 +6,3 @@ def randChr(chrDict: dict[str, list[str]]) -> str:
     caractList = chr[1]
     
     return nombre
-
-if __name__ == "__main__":
-    print(randChr(easyChr))

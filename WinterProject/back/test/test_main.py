@@ -1,14 +1,15 @@
 import pytest
-from src.main import *
+from src.main import randChr
+from test.casos import *
 
 @pytest.mark.dict_null
 def test_dict_null():
-    assert randChr(None)
+    assert randChr(chrDict=hollowDict) == None
 
 @pytest.mark.personaje_easy
 def test_personaje_easy():
-    assert randChr(easyChr)
+    assert randChr(chrDict=easyChr) == "Maria"
 
 @pytest.mark.personaje_hard
 def test_personaje_hard():
-    assert randChr(hardChr)
+    assert randChr(chrDict=hardChr) == "Susan"
