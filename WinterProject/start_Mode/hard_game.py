@@ -1,5 +1,7 @@
 import reflex as rx
 from rxconfig import config
+from WinterProject.start_Mode.state import State
+from WinterProject.start_Mode import style
 from PIL import Image
 
 img = Image.open(r"assets\personajes_qsq_01.png")
@@ -82,20 +84,25 @@ def qa(question: str, answer: str) -> rx.Component:
     )
 
 def chat() -> rx.Component:
-    qa_pairs = [
-        ("Pregunta 1", "Respuesta 1"),
-        ("Pregunta 2", "Respuesta 2"),
-    ]
     return rx.box(
-        *[qa(q, a) for q, a in qa_pairs],
-        overflow_y="auto",
-        height="50vh",
+        rx.foreach(
+            State.chat_history,
+            lambda messages: qa(messages[0], messages[1]),
+        )
     )
 
 def action_bar() -> rx.Component:
     return rx.hstack(
-        rx.input(placeholder="Escribe tu pregunta", flex="1", border="1px solid gray"),
-        rx.button("Enviar", color_scheme="green"),
+        rx.input(
+            placeholder="Ask a question",
+            on_change=State.set_question,
+            style=style.input_style,
+        ),
+        rx.button(
+            "Ask",
+            on_click=State.answer,
+            style=style.button_style,
+        ),
     )
 
 @rx.page(route="/hard_game", title="Hard Game")
