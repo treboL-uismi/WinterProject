@@ -1,8 +1,6 @@
 import random
 import reflex as rx
-
-from WinterProject.start_Mode.easy_game import action_bar as easy_action
-from WinterProject.start_Mode.hard_game import action_bar as hard_action
+from src.list_names import easyChr
 
 def randChr(chrDict: dict[str, list[str]]) -> str:
     chr = random.choice(list(chrDict.items()))
@@ -11,9 +9,13 @@ def randChr(chrDict: dict[str, list[str]]) -> str:
     
     return nombre
 
-def getInputEasy():
-    ...
 
-def getInputHard():
-    ...
-    
+def filterCharact(caracteristica: str) -> str:
+    charactList = easyChr[randChr(easyChr)]
+    for charact in charactList:
+        if caracteristica == charact:
+            print("Si")
+            break
+        else:
+            print("No")
+            break

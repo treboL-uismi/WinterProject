@@ -1,9 +1,9 @@
 easyChr = {
-    "Maria" : ["pelo castaño"],
-    "Frans" : ["boca pequeña"],
-    "Herman" : ["calvo"],
-    "Bernard" : ["gorro"],
-    "Philip" : ["barba", "pelo castaño"],
+    "Maria" : ["pelo castaño", "gorro verde", "ojos castaños", "pintalabios"],
+    "Frans" : ["boca pequeña", "ojos castaños", "pelirrojo", "cabeza ancha", "nariz pequeña", "orejas largas"],
+    "Herman" : ["calvo", "pelirrojo", "nariz gorda", "orejas pequeñas"],
+    "Bernard" : ["gorro", "pelo castaño", "boca pequeña", "nariz gorda", "cejas castañas"],
+    "Philip" : ["barba", "pelo castaño", "peludo", "cejas finas"],
     "Eric" : ["rubio", "sombrero"],
     "Charles" : ["rubio", "bigote"],
     "Peter" : ["nariz grande", "boca grande", "pelo blanco"]
@@ -27,3 +27,4 @@ hardChr = {
     "Richard" : ["calvo", "barba"],
     "Paul" : ["gafas", "pelo blanco", "cejas blancas"]    
 }
+
