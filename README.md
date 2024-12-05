@@ -66,6 +66,7 @@ Añade 2 modos de dificultad, el modo fácil y el difícil. Cada dificultad cont
 
 ## **Arquitectura de la aplicación**
 Proyecto dividido en varias carpetas,
+
 *Miscelanea*
 - /assets : Ubicación de las imágenes necesarias,
 
