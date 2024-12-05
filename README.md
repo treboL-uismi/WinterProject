@@ -41,6 +41,7 @@ git clone https://github.com/treboL-uismi/WinterProject
 ```
 
 Siguiente paso, debemos instalar un entorno virtual mediante esta otra cadena de comandos,
+
 **Versión Linux**
 ```
 python3 -m venv .venv
