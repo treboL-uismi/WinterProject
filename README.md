@@ -4,7 +4,7 @@
 
 <hr>
 
-# **Winter Project - [¿Quién es quién?](https://es.wikipedia.org/wiki/Guess_Who%3F) Version 0.5.1**
+# **Winter Project - [¿Quién es quién?](https://es.wikipedia.org/wiki/Guess_Who%3F) Version 0.8.5**
 
 **Tabla de contenidos**
 
