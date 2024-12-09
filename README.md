@@ -83,8 +83,10 @@ pip3 install -r requirements.txt
 Si quisieramos iniciar la aplicación, tendríamos que hacer un ```reflex run```.
 ## Uso
 **1. Esperar a que termine de compilar el programa y meterse a la página que te envía.**
+
 **2. Entrar a una nueva partida y seleccionar el modo de juego.**
-**3. Enjoy the ride!
+
+**3. Enjoy the ride!**
 
 # **Metodología**
 Para las partes del Frontend y Backend del proyecto, lo que hicimos fue replicar otros ejemplos que ya estaban hechos en los Docs de Reflex.
