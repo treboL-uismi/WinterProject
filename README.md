@@ -94,6 +94,7 @@ La aplicación basada en el Framework de Reflex, está obviamente inspirada en e
 Añade 2 modos de dificultad, el modo fácil y el difícil. Cada dificultad contiene diferentes cantidades de cartas o personajes, Modo Fácil (8), Modo Difícil (16).
 ## **Requisitos funcionales/no funcionales, NOT LIST**
 ## **Diagrama de casos de uso**
+![Use Cases](assets/diagrama_casos_uso.png)
 
 ## **Arquitectura de la aplicación**
 Proyecto dividido en varias carpetas:
@@ -115,7 +116,6 @@ Proyecto dividido en varias carpetas:
 
 # **Diseño**
 ## **Diagrama de Componentes**
-
 
 # **Implementación**
 ## **Tecnologías y Herramientas Elegidas**
