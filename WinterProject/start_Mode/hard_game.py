@@ -4,47 +4,27 @@ from WinterProject.start_Mode.state import State
 from WinterProject.start_Mode import style
 from PIL import Image
 
-img = Image.open(r"assets\personajes_qsq_01.png")
 
-hardChr = {
-    "Susan" : ["pelo blanco"],
-    "Claire" : ["sombrero", "gafas azules"],
-    "David" : ["perilla", "rubio"],
-    "Anne" : ["afro", "arietes"],
-    "Robert" : ["pelo castaño", "ojos azules"],
-    "Anita" : ["rubia", "cara rechoncha"],
-    "Joe" : ["rubio", "gafas rojas"],
-    "George" : ["pelo blanco", "fedora"],
-    "Bill" : ["calvo", "cabeza huevo"],
-    "Alfred" : ["pelo largo", "bigote"],
-    "Max" : ["bigote", "pelo castaño"],
-    "Tom" : ["calvo", "gafas marrones"],
-    "Alex" : ["bigote", "pelo corto", "pelo castaño"],
-    "Sam" : ["calvo", "gafas redondas"],
-    "Richard" : ["calvo", "barba"],
-    "Paul" : ["gafas", "pelo blanco", "cejas blancas"]    
-}
+def set_mode(mode: str):
+    @rx.event
+    def set_mode_action():
+        State.mode = mode
+    return set_mode_action
 
-card = [
-    (0, 0, 510, 771),
-    (510, 0, 1020, 771),
-    (1020, 0, 1530, 771),
-    (1530, 0, 2040, 771),
-    (0, 771, 510, 1542),
-    (510, 771, 1020, 1542),
-    (1020, 771, 1530, 1542),
-    (1530, 771, 2040, 1542),
-    (0, 1542, 510, 2313),
-    (510, 1542, 1020, 2313),
-    (1020, 1542, 1530, 2313),
-    (1530, 1542, 2040, 2313),
-    (0, 2313, 510, 3084),
-    (510, 2313, 1020, 3084),
-    (1020, 2313, 1530, 3084),
-    (1530, 2313, 2040, 3084),
-]
 
 def game_board():
+
+    img = Image.open(r"assets\personajes_qsq_01.png")
+
+    card = [
+    (0, 0, 510, 771), (510, 0, 1020, 771), (1020, 0, 1530, 771),
+    (1530, 0, 2040, 771), (0, 771, 510, 1542), (510, 771, 1020, 1542),
+    (1020, 771, 1530, 1542), (1530, 771, 2040, 1542), (0, 1542, 510, 2313),
+    (510, 1542, 1020, 2313), (1020, 1542, 1530, 2313), (1530, 1542, 2040, 2313),
+    (0, 2313, 510, 3084), (510, 2313, 1020, 3084), (1020, 2313, 1530, 3084),
+    (1530, 2313, 2040, 3084),
+    ]
+
     return rx.grid(
         *[
             rx.card(
@@ -88,22 +68,44 @@ def chat() -> rx.Component:
         rx.foreach(
             State.chat_history,
             lambda messages: qa(messages[0], messages[1]),
+        ),
+        rx.cond(
+            State.is_game_over,
+            rx.box("Game Over! Restart to play again.", bg="green.200", padding="1em", border_radius="lg"),
         )
     )
 
-def action_bar() -> rx.Component:
+def guess_action_bar() -> rx.Component:
     return rx.hstack(
         rx.input(
-            placeholder="Ask a question",
-            on_change=State.set_question,
+            placeholder="Guess the character",
+            on_change=State.set_guess,
             style=style.input_style,
         ),
         rx.button(
-            "Ask",
-            on_click=State.answer,
+            "Guess",
+            on_click=State.guess_character,
             style=style.button_style,
         ),
     )
+
+def action_bar() -> rx.Component:
+    return rx.vstack(
+        rx.hstack(
+            rx.input(
+                placeholder="Ask a question",
+                on_change=State.set_question,
+                style=style.input_style,
+            ),
+            rx.button(
+                "Ask",
+                on_click=State.answer,
+                style=style.button_style,
+            ),
+        ),
+        guess_action_bar(),
+    )
+
 
 @rx.page(route="/hard_game", title="Hard Game")
 def hard_Game() -> rx.Component:
@@ -112,7 +114,6 @@ def hard_Game() -> rx.Component:
         rx.hstack(
             rx.box(
                 rx.vstack(
-                    rx.heading("Time left -", size="9"),
                     game_board(),
                     rx.hstack(restart_game(), go_back(), spacing="2"),
                     spacing="5",
@@ -136,8 +137,5 @@ def hard_Game() -> rx.Component:
                 shadow="md",
             ),
         ),
-        spacing="4",
-        align_items="start",
-        padding="2em",
-        min_height="100vh",
+        on_mount=State.set_mode("hard"),
     )

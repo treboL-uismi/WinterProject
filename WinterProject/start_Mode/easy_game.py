@@ -4,31 +4,26 @@ from WinterProject.start_Mode.state import State
 from WinterProject.start_Mode import style
 from PIL import Image
 
-img = Image.open(r"assets\personajes_qsq_02.png")
+def set_mode(mode: str):
+    @rx.event
+    def set_mode_action():
+        State.mode = mode
+    return set_mode_action
 
-easyChr = {
-    "Maria" : ["pelo castaño"],
-    "Frans" : ["boca pequeña"],
-    "Herman" : ["calvo"],
-    "Bernard" : ["gorro"],
-    "Philip" : ["barba", "pelo castaño"],
-    "Eric" : ["rubio", "sombrero"],
-    "Charles" : ["rubio", "bigote"],
-    "Peter" : ["nariz grande", "boca grande", "pelo blanco"]
-}
+def game_board_easy():
+    img = Image.open(r"assets\\personajes_qsq_02.png")
 
-card = [
-    (0, 0, 510, 771),
-    (510, 0, 1020, 771),
-    (1020, 0, 1530, 771),
-    (1530, 0, 2040, 771),
-    (0, 771, 510, 1542),
-    (510, 771, 1020, 1542),
-    (1020, 771, 1530, 1542),
-    (1530, 771, 2040, 1542),
-]
+    card = [
+        (0, 0, 510, 771),
+        (510, 0, 1020, 771),
+        (1020, 0, 1530, 771),
+        (1530, 0, 2040, 771),
+        (0, 771, 510, 1542),
+        (510, 771, 1020, 1542),
+        (1020, 771, 1530, 1542),
+        (1530, 771, 2040, 1542),
+    ]
 
-def game_board():
     return rx.grid(
         *[
             rx.card(
@@ -96,8 +91,7 @@ def easy_Game() -> rx.Component:
         rx.hstack(
             rx.box(
                 rx.vstack(
-                    rx.heading("Time left -", size="9"),
-                    game_board(),
+                    game_board_easy(),
                     rx.hstack(restart_game(), go_back(), spacing="2"),
                     spacing="5",
                 ),
@@ -120,8 +114,5 @@ def easy_Game() -> rx.Component:
                 shadow="md",
             ),
         ),
-        spacing="4",
-        align_items="start",
-        padding="2em",
-        min_height="100vh",
+        on_mount=State.set_mode("easy"),
     )

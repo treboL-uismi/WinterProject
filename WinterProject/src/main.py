@@ -1,14 +1,6 @@
-import random
 import reflex as rx
-from src.list_names import easyChr
-
-def randChr(chrDict: dict[str, list[str]]) -> str:
-    chr = random.choice(list(chrDict.items()))
-    nombre = chr[0]
-    #caractList = chr[1]
-    
-    return nombre
-
+from WinterProject.WinterProject.start_Mode.personajeRonadom import randChr
+from WinterProject.WinterProject.start_Mode.list_names import easyChr
 
 def filterCharact(caracteristica: str) -> str:
     charactList = easyChr[randChr(easyChr)]
