@@ -89,7 +89,8 @@ Si quisieramos iniciar la aplicación, tendríamos que hacer un ```reflex run```
 **3. Enjoy the ride!**
 
 # **Metodología**
-Para las partes del Frontend y Backend del proyecto, lo que hicimos fue replicar otros ejemplos que ya estaban hechos en los Docs de Reflex.
+En general, para las partes del Frontend y Backend del proyecto, lo que hicimos fue replicar otros ejemplos que ya estaban hechos en los Docs de Reflex.
+Para las imagenes en el Frontend, a Luismi se le ocurrió un método que consiste en segmentar la imagen completa en distintas coordenadas para poder optimizar el uso de esta en cada tarjeta.
 
 # **Descripción Técnica**
 La aplicación basada en el Framework de Reflex, está obviamente inspirada en el juego de ¿Quién es quién?
