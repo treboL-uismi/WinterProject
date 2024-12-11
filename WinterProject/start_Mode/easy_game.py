@@ -11,7 +11,8 @@ def set_mode(mode: str):
     return set_mode_action
 
 def game_board_easy():
-    img = Image.open(r"assets\\personajes_qsq_02.png")
+    img_original = Image.open(r"assets\\personajes_qsq_02.png")
+    img_negra = Image.open(r"assets\\imagenEnNegro.png")
 
     card = [
         (0, 0, 510, 771),
@@ -26,13 +27,16 @@ def game_board_easy():
 
     return rx.grid(
         *[
-            rx.card(
-                rx.button(
-                    rx.image(src=img.crop(card[i]), alt=f"Card {i + 1}"),
-                    as_child=True,
-                    radius="medium",
-                    variant="ghost",
+            rx.image(
+                src=rx.cond(
+                    State.selected_cards.contains(i),  # Usar Var.contains() aquí
+                    img_negra.crop(card[i]),
+                    img_original.crop(card[i]),
                 ),
+                alt=f"Card {i + 1}",
+                on_click=lambda i=i: State.toggle_card(i),  # Acción del click en la imagen
+                width="100%",
+                height="auto",
             )
             for i in range(len(card))
         ],

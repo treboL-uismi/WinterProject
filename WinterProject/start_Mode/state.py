@@ -10,6 +10,14 @@ class State(rx.State):
     is_game_over: bool = False
     guessed_character: str = ""
     mode: str = ""
+    selected_cards: set[int] = set()
+
+    def toggle_card(self, index: int):
+        if index in self.selected_cards:
+            self.selected_cards.remove(index)
+        else:
+            self.selected_cards.add(index)
+
 
     @rx.event
     def set_mode(self, mode: str):

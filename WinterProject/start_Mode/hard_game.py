@@ -11,29 +11,31 @@ def set_mode(mode: str):
         State.mode = mode
     return set_mode_action
 
-
 def game_board():
-
-    img = Image.open(r"assets\personajes_qsq_01.png")
+    img_original = Image.open(r"assets\personajes_qsq_01.png")
+    img_negra = Image.open(r"assets\\imagenEnNegro.png")
 
     card = [
-    (0, 0, 510, 771), (510, 0, 1020, 771), (1020, 0, 1530, 771),
-    (1530, 0, 2040, 771), (0, 771, 510, 1542), (510, 771, 1020, 1542),
-    (1020, 771, 1530, 1542), (1530, 771, 2040, 1542), (0, 1542, 510, 2313),
-    (510, 1542, 1020, 2313), (1020, 1542, 1530, 2313), (1530, 1542, 2040, 2313),
-    (0, 2313, 510, 3084), (510, 2313, 1020, 3084), (1020, 2313, 1530, 3084),
-    (1530, 2313, 2040, 3084),
+        (0, 0, 510, 771), (510, 0, 1020, 771), (1020, 0, 1530, 771),
+        (1530, 0, 2040, 771), (0, 771, 510, 1542), (510, 771, 1020, 1542),
+        (1020, 771, 1530, 1542), (1530, 771, 2040, 1542), (0, 1542, 510, 2313),
+        (510, 1542, 1020, 2313), (1020, 1542, 1530, 2313), (1530, 1542, 2040, 2313),
+        (0, 2313, 510, 3084), (510, 2313, 1020, 3084), (1020, 2313, 1530, 3084),
+        (1530, 2313, 2040, 3084),
     ]
 
     return rx.grid(
         *[
-            rx.card(
-                rx.button(
-                    rx.image(src=img.crop(card[i]), alt=f"Card {i + 1}"),
-                    as_child=True,
-                    radius="medium",
-                    variant="ghost",
+            rx.image(
+                src=rx.cond(
+                    State.selected_cards.contains(i),
+                    img_negra.crop(card[i]),
+                    img_original.crop(card[i]),
                 ),
+                alt=f"Card {i + 1}",
+                on_click=lambda i=i: State.toggle_card(i),
+                width="100%",
+                height="auto",
             )
             for i in range(len(card))
         ],

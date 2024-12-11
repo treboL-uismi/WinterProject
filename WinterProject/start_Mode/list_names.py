@@ -18,7 +18,7 @@ hardChr = {
     "Anita" : ["mujer", "rubio", "cara rechoncha"],
     "Joe" : ["hombre", "rubio", "gafas rojas"],
     "George" : ["hombre", "pelo blanco", "fedora"],
-    "Bill" : ["hombre", "hombre", "calvo", "cabeza huevo"],
+    "Bill" : ["hombre", "calvo", "cabeza huevo"],
     "Alfred" : ["hombre", "pelo largo", "bigote"],
     "Max" : ["hombre", "bigote", "pelo castaño"],
     "Tom" : ["hombre", "calvo", "gafas"],
