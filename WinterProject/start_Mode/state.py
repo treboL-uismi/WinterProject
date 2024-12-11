@@ -1,7 +1,7 @@
 import reflex as rx
 from .list_names import easyChr, hardChr
 from .personajeRonadom import personajeRandom
-from .ComprobarCaracteristicas import buscar_caracteristicas, tiene_caracteristica
+from .ComprobarCaracteristicas import tiene_caracteristica
 
 class State(rx.State):
     question: str = ""
@@ -13,18 +13,10 @@ class State(rx.State):
 
     @rx.event
     def set_mode(self, mode: str):
-        """Establece el modo de juego."""
         self.mode = mode
-
-    def set_question(self, question: str):
-        self.question = question.strip()
-        
-
-    def clear_chat(self):
-        self.reset()
+        self.random_character = ""
 
     def get_character_list(self):
-        # Retorna el diccionario correspondiente basado en el modo de juego
         return easyChr if self.mode == "easy" else hardChr
 
     def get_answer(self, question: str) -> str:
@@ -51,10 +43,17 @@ class State(rx.State):
             self.random_character = personajeRandom(self.get_character_list())
 
         if self.guessed_character.lower() == self.random_character.lower():
-            self.chat_history.append(("Guess", f"Correct! The character was {self.random_character}."))
+            self.chat_history.append(("¡Eso es!", f"¡Correcto! El personaje es {self.random_character}."))
             self.is_game_over = True
         else:
-            self.chat_history.append(("Guess", f"Incorrect! Try again."))
+            self.chat_history.append(("¡Eso es!", f"¡Incorrecto! Inténtalo de nuevo."))
         self.guessed_character = ""
+
+    @rx.event
+    def clear_chat(self):
+        self.chat_history.clear()
+        self.random_character = ""
+        self.is_game_over = False
+
 
 
