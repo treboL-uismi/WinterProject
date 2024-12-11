@@ -18,6 +18,10 @@ class State(rx.State):
 
     def set_question(self, question: str):
         self.question = question.strip()
+        
+
+    def clear_chat(self):
+        self.reset()
 
     def get_character_list(self):
         # Retorna el diccionario correspondiente basado en el modo de juego

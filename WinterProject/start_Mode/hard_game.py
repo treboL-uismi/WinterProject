@@ -46,13 +46,13 @@ def game_board():
 
 def restart_game():
     return rx.link(
-        rx.button("Restart", color_scheme="blue"),
-        href="/hard_game"
+        rx.button("Reiniciar", color_scheme="blue"),
+        href="/hard_game", on_click=State.clear_chat
     )
 
 def go_back():
     return rx.link(
-        rx.button("Exit Game", color_scheme="red"),
+        rx.button("Salir", color_scheme="red"),
         href="/new_Game_page"
     )
 
@@ -71,14 +71,14 @@ def chat() -> rx.Component:
         ),
         rx.cond(
             State.is_game_over,
-            rx.box("Game Over! Restart to play again.", bg="green.200", padding="1em", border_radius="lg"),
+            rx.box("¡Has ganado! Dale a Reiniciar para volver a empezar.", bg="green.200", padding="1em", border_radius="lg"),
         )
     )
 
 def guess_action_bar() -> rx.Component:
     return rx.hstack(
         rx.input(
-            placeholder="Guess the character",
+            placeholder="Adivina el personaje",
             on_change=State.set_guess,
             style=style.input_style,
         ),
@@ -93,7 +93,7 @@ def action_bar() -> rx.Component:
     return rx.vstack(
         rx.hstack(
             rx.input(
-                placeholder="Ask a question",
+                placeholder="Pregunta por una característica",
                 on_change=State.set_question,
                 style=style.input_style,
             ),
@@ -106,6 +106,11 @@ def action_bar() -> rx.Component:
         guess_action_bar(),
     )
 
+def clear_button() -> rx.Component:
+    return rx.button(
+    "Limpiar Chat",
+    on_click=State.clear_chat,
+)
 
 @rx.page(route="/hard_game", title="Hard Game")
 def hard_Game() -> rx.Component:
@@ -128,6 +133,7 @@ def hard_Game() -> rx.Component:
                 rx.vstack(
                     chat(),
                     action_bar(),
+                    clear_button(),
                     spacing="3",
                 ),
                 width="30%",

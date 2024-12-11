@@ -45,13 +45,13 @@ def game_board_easy():
 
 def restart_game():
     return rx.link(
-        rx.button("Restart", color_scheme="blue"),
-        href="/easy_game"
+        rx.button("Reiniciar", color_scheme="blue"),
+        href="/easy_game", on_click=State.clear_chat
     )
 
 def go_back():
     return rx.link(
-        rx.button("Exit Game", color_scheme="red"),
+        rx.button("Salir", color_scheme="red"),
         href="/new_Game_page"
     )
 
@@ -67,22 +67,49 @@ def chat() -> rx.Component:
         rx.foreach(
             State.chat_history,
             lambda messages: qa(messages[0], messages[1]),
+        ),
+        rx.cond(
+            State.is_game_over,
+            rx.box("¡Has ganado! Dale a Reiniciar para volver a empezar.", bg="green.200", padding="1em", border_radius="lg"),
         )
     )
 
-def action_bar() -> rx.Component:
+def guess_action_bar() -> rx.Component:
     return rx.hstack(
         rx.input(
-            placeholder="Ask a question",
-            on_change=State.set_question,
+            placeholder="Adivina el personaje",
+            on_change=State.set_guess,
             style=style.input_style,
         ),
         rx.button(
-            "Ask",
-            on_click=State.answer,
+            "Guess",
+            on_click=State.guess_character,
             style=style.button_style,
         ),
     )
+
+def action_bar() -> rx.Component:
+    return rx.vstack(
+        rx.hstack(
+            rx.input(
+                placeholder="Pregunta por una característica",
+                on_change=State.set_question,
+                style=style.input_style,
+            ),
+            rx.button(
+                "Ask",
+                on_click=State.answer,
+                style=style.button_style,
+            ),
+        ),
+        guess_action_bar(),
+    )
+
+def clear_button() -> rx.Component:
+    return rx.button(
+    "Limpiar Chat",
+    on_click=State.clear_chat,
+)
 
 @rx.page(route="/easy_game", title="Easy Game")
 def easy_Game() -> rx.Component:
@@ -105,6 +132,7 @@ def easy_Game() -> rx.Component:
                 rx.vstack(
                     chat(),
                     action_bar(),
+                    clear_button(),
                     spacing="3",
                 ),
                 width="30%",
