@@ -145,8 +145,7 @@ Dentro de la carpeta hallamos otras dos carpetas, siendo **/game_modes** la ubic
 
 # **Pruebas**
 ## **Coverage**
-## **Test de unidad**
-## **Test de integración**
+![Coverage Testing](assets/coverage_testing.png)
 
 
 # **Análisis del tiempo invertido**
@@ -155,6 +154,12 @@ Dentro de la carpeta hallamos otras dos carpetas, siendo **/game_modes** la ubic
 
 
 # **Conclusiones**
+Cabe recalcar que aún faltan cosas por implementar en este proyecto pero podemos presenciar novedades como los 2 modos de dificultad.
+
+En general ha sido una experiencia interesante.
 ## **Posibles mejoras**
 En un futuro mejoraremos el estilo del Frontend para que pueda ser mucho más aceptable visualmente, optimizar a lo mejor la lógica detrás del juego e implementar branches de Git Flow (hotfix, release...)
 ## **Dificultades**
+En general nuestro mayor problema fueron las imagenes a la hora de ocultarlas al darle click en cada una.
+
+Mención honorable a los casos test.
