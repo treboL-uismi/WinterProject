@@ -109,17 +109,21 @@ Proyecto dividido en varias carpetas:
 - **/pytest.ini** : Ubicación de los marks de pytest.
 
 *Backend*
-- **/back/src** : Ubicación de la lógica detrás de la aplicación,
-- **/back/test** : Ubicación de los casos test.
+- **/back/test** : Ubicación de los casos test,
+- **/WinterProject/start_Mode/list_names.py** : Ubicación de las características de todos los personajes,
+- **/WinterProject/start_Mode/personajeRonadom.py** : Script de generación de personaje al azar,
+- **/WinterProject/start_Mode/ComprobarCaracteristicas.py** : Script de comprobación de las características de cada personaje escogido.
 
 *Frontend*
-- **/WinterProject** : Carpeta fundamental para el funcionamiento de las páginas, aquí se guarda el "index" y la página de "New Game",
-- **/WinterProject/game_modes** : Ubicación de los modos de dificultad,
-- **/WinterProject/start_Mode** : Ubicación de las partidas.
+- **/WinterProject** : Carpeta fundamental para el funcionamiento de las páginas y su lógica,
+- **/WinterProject/WinterProject.py** : Página que funciona como el "index",
+- **/WinterProject/new_game.py** : Página que sirve para escoger los 2 modos de dificultad,
+- **/WinterProject/start_Mode/easy_game.py** : La partida en dificultad fácil,
+- **/WinterProject/start_Mode/hard_game.py** : La partida en dificultad difícil.
 
 # **Diseño**
 ## **Diagrama de Componentes**
-
+![Component Design](assets/component_design.png)
 # **Implementación**
 ## **Tecnologías y Herramientas Elegidas**
 - [Reflex](https://reflex.dev/)

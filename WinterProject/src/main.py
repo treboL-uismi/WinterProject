@@ -1,13 +1,11 @@
 import reflex as rx
-from WinterProject.WinterProject.start_Mode.personajeRonadom import randChr
-from WinterProject.WinterProject.start_Mode.list_names import easyChr
+from WinterProject.start_Mode.personajeRonadom import personajeRandom
+from WinterProject.start_Mode.list_names import easyChr
 
 def filterCharact(caracteristica: str) -> str:
-    charactList = easyChr[randChr(easyChr)]
+    charactList = easyChr[personajeRandom(easyChr)]
     for charact in charactList:
         if caracteristica == charact:
-            print("Si")
-            break
+            return "Si"
         else:
-            print("No")
-            break
+            return "No"

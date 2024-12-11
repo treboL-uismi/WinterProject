@@ -1,31 +1,34 @@
 hollowDict = {}
 
 easyChr = {
-    "Maria" : ["pelo castaño", "gorro verde", "ojos castaños", "pintalabios"],
-    "Frans" : ["boca pequeña", "ojos castaños", "pelirrojo", "cabeza ancha", "nariz pequeña", "orejas largas"],
-    "Herman" : ["calvo", "pelirrojo", "nariz gorda", "orejas pequeñas"],
-    "Bernard" : ["gorro", "pelo castaño", "boca pequeña", "nariz gorda", "cejas castañas"],
-    "Philip" : ["barba", "pelo castaño", "peludo", "cejas finas"],
-    "Eric" : ["rubio", "sombrero"],
-    "Charles" : ["rubio", "bigote"],
-    "Peter" : ["nariz grande", "boca grande", "pelo blanco"]
+    "Maria" : ["mujer", "pelo castaño", "gorro verde", "ojos castaños", "pintalabios"],
+    "Frans" : ["hombre", "boca pequeña", "ojos castaños", "pelirrojo", "cabeza ancha", "nariz pequeña", "orejas largas"],
+    "Herman" : ["hombre", "calvo", "pelirrojo", "nariz gorda", "orejas pequeñas"],
+    "Bernard" : ["hombre", "gorro", "pelo castaño", "boca pequeña", "nariz gorda", "cejas castañas"],
+    "Philip" : ["hombre", "barba", "pelo castaño", "peludo", "cejas finas"],
+    "Eric" : ["hombre", "rubio", "sombrero"],
+    "Charles" : ["hombre", "rubio", "bigote"],
+    "Peter" : ["hombre" "nariz grande", "boca grande", "pelo blanco"]
 }
 
 hardChr = {
-    "Susan" : ["pelo blanco"],
-    "Claire" : ["sombrero", "gafas azules"],
-    "David" : ["perilla", "rubio"],
-    "Anne" : ["afro", "arietes"],
-    "Robert" : ["pelo castaño", "ojos azules"],
-    "Anita" : ["rubia", "cara rechoncha"],
-    "Joe" : ["rubio", "gafas rojas"],
-    "George" : ["pelo blanco", "fedora"],
-    "Bill" : ["calvo", "cabeza huevo"],
-    "Alfred" : ["pelo largo", "bigote"],
-    "Max" : ["bigote", "pelo castaño"],
-    "Tom" : ["calvo", "gafas marrones"],
-    "Alex" : ["bigote", "pelo corto", "pelo castaño"],
-    "Sam" : ["calvo", "gafas redondas"],
-    "Richard" : ["calvo", "barba"],
-    "Paul" : ["gafas", "pelo blanco", "cejas blancas"]    
+    "Susan" : ["mujer", "pelo blanco"],
+    "Claire" : ["mujer", "sombrero", "gafas"],
+    "David" : ["hombre", "perilla", "rubio"],
+    "Anne" : ["mujer", "afro", "arietes"],
+    "Robert" : ["hombre", "pelo castaño", "ojos"],
+    "Anita" : ["mujer", "rubio", "cara rechoncha"],
+    "Joe" : ["hombre", "rubio", "gafas rojas"],
+    "George" : ["hombre", "pelo blanco", "fedora"],
+    "Bill" : ["hombre", "hombre", "calvo", "cabeza huevo"],
+    "Alfred" : ["hombre", "pelo largo", "bigote"],
+    "Max" : ["hombre", "bigote", "pelo castaño"],
+    "Tom" : ["hombre", "calvo", "gafas"],
+    "Alex" : ["hombre", "bigote", "pelo corto", "pelo castaño"],
+    "Sam" : ["hombre", "calvo", "gafas redondas"],
+    "Richard" : ["hombre", "calvo", "barba"],
+    "Paul" : ["hombre", "gafas", "pelo blanco", "cejas blancas"]    
 }
+
+nameEasy_list = ["Maria", "Frans", "Herman", "Bernard", "Philip", "Eric", "Charles", "Peter"]
+nameHard_list = ["Susan", "Claire", "David", "Anne", "Robert", "Anita", "Joe", "George", "Bill", "Alfred", "Max", "Tom", "Alex", "Sam", "Richard", "Paul"]
