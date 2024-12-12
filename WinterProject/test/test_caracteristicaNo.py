@@ -1,6 +1,6 @@
 import pytest
-from WinterProject.src.main import filterCharact
+from WinterProject.start_Mode.ComprobarCaracteristicas import tiene_caracteristica
 
-@pytest.mark.caracteristicaNoEsta
-def test_caracteristica_no_esta():
-    assert filterCharact("pelo castaño") == "No"
+@pytest.mark.caracteristicaSiEsta
+def test_caracteristica_esta():
+    assert tiene_caracteristica("pelo castaño") == False

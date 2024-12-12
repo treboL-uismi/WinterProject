@@ -1,6 +1,6 @@
 import pytest
-from WinterProject.src.main import filterCharact
+from WinterProject.start_Mode.ComprobarCaracteristicas import tiene_caracteristica
 
 @pytest.mark.caracteristicaSiEsta
 def test_caracteristica_esta():
-    assert filterCharact("hombre") == "Si"
+    assert tiene_caracteristica("hombre") == True
