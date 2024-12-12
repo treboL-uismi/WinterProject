@@ -29,12 +29,12 @@ def game_board_easy():
         *[
             rx.image(
                 src=rx.cond(
-                    State.selected_cards.contains(i),  # Usar Var.contains() aquí
+                    State.selected_cards.contains(i),
                     img_negra.crop(card[i]),
                     img_original.crop(card[i]),
                 ),
                 alt=f"Card {i + 1}",
-                on_click=lambda i=i: State.toggle_card(i),  # Acción del click en la imagen
+                on_click=lambda i=i: State.toggle_card(i),
                 width="100%",
                 height="auto",
             )
