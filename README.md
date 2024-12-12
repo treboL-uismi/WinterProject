@@ -16,3 +16,4 @@ Crear un ¿Quién es quién? con el framework open-source de **[Reflex](https://
 + Compuesto por varios modos de dificultad,
     - Modo Fácil (8 tarjetas)
     - Modo Difícil (16 tarjetas)
+>>>>>>>>> Temporary merge branch 2

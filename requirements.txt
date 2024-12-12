@@ -1,1 +1,4 @@
-reflex==0.6.5
+reflex==0.6.6.post3
+pillow==11.0.0
+pytest==8.3.4
+coverage==7.6.8

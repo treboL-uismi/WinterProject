@@ -3,11 +3,6 @@ import reflex as rx
 
 from rxconfig import config
 
-class State(rx.State):
-    """The app state."""
-
-    ...
-
 
 def new_game():
     return rx.link(
@@ -18,13 +13,12 @@ def new_game():
     
 @rx.page(route="/", title="Index")
 def index() -> rx.Component:
-    # Welcome Page (Index)
     return rx.container(
         rx.color_mode.button(position="top-right"),
         rx.vstack(
-            rx.heading("¿Quién es quién?", size="9"), # heading
-            new_game(),  #boton
-            spacing="5", #configuracion
+            rx.heading("¿Quién es quién?", size="9"),
+            new_game(),
+            spacing="5",
             justify="center",
             min_height="85vh",
         ),

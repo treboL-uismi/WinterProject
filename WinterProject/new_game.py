@@ -1,23 +1,22 @@
 import reflex as rx
-
+from .start_Mode.state import State
 from rxconfig import config
 
 
-class State(rx.State):
-    """The app state."""
-
-    ...
-    
 def easy_game():
     return rx.link(
-        rx.button("Modo fácil"),
-        href="/easy_mode"
+        rx.button(
+            "Modo fácil",
+            on_click=[State.set_mode("easy"), rx.redirect("/easy_game")],
+        ),
     )
 
 def hard_game():
     return rx.link(
-        rx.button("Modo difícil"),
-        href="/hard_mode"
+        rx.button(
+            "Modo difícil",
+            on_click=[State.set_mode("hard"), rx.redirect("/hard_game")],
+        ),
     )
 
 def go_back():
