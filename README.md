@@ -4,7 +4,7 @@
 
 <hr>
 
-# **Winter Project - [¿Quién es quién?](https://es.wikipedia.org/wiki/Guess_Who%3F) Version 0.8.5**
+# **Winter Project - [¿Quién es quién?](https://es.wikipedia.org/wiki/Guess_Who%3F) Version 1.0.0**
 
 **Tabla de contenidos**
 
@@ -16,7 +16,7 @@
 -   [**Metodología**](#metodología)
 -   [**Descripción técnica**](#descripción-técnica)
     -   [**Requisitos funcionales/no funcionales, NOT LIST**](#partes-interesadas-y-requisitos-funcionalesno-funcionales)
-    -   [**Historias de usuaria**](#historias-de-usuaria)
+    -   [**Historias de usuario**](#historias-de-usuario)
     -   [**Arquitectura de la aplicación**](#arquitectura-de-la-aplicación)
 -   [**Diseño**](#diseño)
     -   [**Diagrama de Componentes**](#componentes)
@@ -96,8 +96,21 @@ Para las imagenes en el Frontend, a Luismi se le ocurrió un método que consist
 La aplicación basada en el Framework de Reflex, está obviamente inspirada en el juego de ¿Quién es quién?
 Añade 2 modos de dificultad, el modo fácil y el difícil. Cada dificultad contiene diferentes cantidades de cartas o personajes, Modo Fácil (8), Modo Difícil (16).
 ## **Requisitos funcionales/no funcionales, NOT LIST**
+Requisistos funcionales: Jugar a una partida en modo fácil o difícil.
+
+Requisitos no funcionales: Escoger aleatoriamente a un personaje, comprobar las características de un personaje...
+
+IN SCOPE: Arquitectura del proyecto, las tarjetas, imágenes, el chat...
+
+OUT SCOPE: Imágenes en cada página (decorarla al gusto visual), 
+
+UNRESOLVED: Añadir un historial de partidas
+
 ## **Diagrama de casos de uso**
 ![Use Cases](assets/diagrama_casos_uso.png)
+
+## **Historias de usuario**
+![User Story](assets/historias_usuario.png)
 
 ## **Arquitectura de la aplicación**
 Proyecto dividido en varias carpetas:
@@ -149,9 +162,11 @@ Dentro de la carpeta hallamos otras dos carpetas, siendo **/game_modes** la ubic
 
 
 # **Análisis del tiempo invertido**
-## **Clockify + Wakatime**
+## **Wakatime**
+![Wakatime](assets/wakatime1.png)
+![Wakatime 2](assets/wakatime2.png)
 ## **Justificación temporal**
-
+Es obvio que faltan capturas de Wakatime y esto no representa todo el tiempo invertido en el proyecto, nosotros estimamos unas 30 horas de proyecto en total.
 
 # **Conclusiones**
 Cabe recalcar que aún faltan cosas por implementar en este proyecto pero podemos presenciar novedades como los 2 modos de dificultad.
