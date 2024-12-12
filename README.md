@@ -122,7 +122,7 @@ Proyecto dividido en varias carpetas:
 - **/pytest.ini** : Ubicación de los marks de pytest.
 
 *Backend*
-- **/back/test** : Ubicación de los casos test,
+- **/WinterProject/test** : Ubicación de los casos test,
 - **/WinterProject/start_Mode/list_names.py** : Ubicación de las características de todos los personajes,
 - **/WinterProject/start_Mode/personajeRonadom.py** : Script de generación de personaje al azar,
 - **/WinterProject/start_Mode/ComprobarCaracteristicas.py** : Script de comprobación de las características de cada personaje escogido.
