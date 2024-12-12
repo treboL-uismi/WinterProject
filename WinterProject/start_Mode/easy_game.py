@@ -26,7 +26,7 @@ def game_board_easy():
     ]
 
     return rx.grid(
-        *[
+        [
             rx.image(
                 src=rx.cond(
                     State.selected_cards.contains(i),
