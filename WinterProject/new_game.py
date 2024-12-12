@@ -7,7 +7,7 @@ def easy_game():
     return rx.link(
         rx.button(
             "Modo fácil",
-            on_click=[State.set_mode("easy"), rx.redirect("/easy_game")],  # Define el modo y redirige
+            on_click=[State.set_mode("easy"), rx.redirect("/easy_game")],
         ),
     )
 
@@ -15,7 +15,7 @@ def hard_game():
     return rx.link(
         rx.button(
             "Modo difícil",
-            on_click=[State.set_mode("hard"), rx.redirect("/hard_game")],  # Define el modo y redirige
+            on_click=[State.set_mode("hard"), rx.redirect("/hard_game")],
         ),
     )
 
