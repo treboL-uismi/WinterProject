@@ -166,7 +166,7 @@ Dentro de la carpeta hallamos otras dos carpetas, siendo **/game_modes** la ubic
 ![Wakatime](assets/wakatime1.png)
 ![Wakatime 2](assets/wakatime2.png)
 ## **Justificación temporal**
-Es obvio que faltan capturas de Wakatime y esto no representa todo el tiempo invertido en el proyecto, nosotros estimamos unas 30 horas de proyecto en total.
+Es obvio que faltan capturas de Wakatime y esto no representa todo el tiempo invertido en el proyecto, nosotros estimamos que hemos trabajado cada uno unas 30 horas.
 
 # **Conclusiones**
 Cabe recalcar que aún faltan cosas por implementar en este proyecto pero podemos presenciar novedades como los 2 modos de dificultad.
