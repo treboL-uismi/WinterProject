@@ -34,7 +34,11 @@
 -   [**Conclusiones**](#conclusiones)
     -   [**Posibles mejoras**](#posibles-mejoras)
     -   [**Dificultades**](#dificultades)
-
+-   [**Preguntas IA**](#preguntas-IA)
+    -   [**¿Qué herramienta de IA generativa usaste (nombre y versión)?**](#herramienta-ia)
+    -   [**¿Qué tipos de prompts proporcionaste?**](#prompt)
+    -   [**¿Para qué usaste la herramienta?**](#para-que-usaste-la-herramienta)
+    -   [**¿Cómo has utilizado o cambiado la salida de la IA generativa?**](#como-has-utilizado-la-ia)
 # **Introducción**
 Proyecto de 1ºDAM hecho por Luis Miguel y Juan Pablo. 
 Junto a otros compañeros del ciclo, tuvimos que crear un ¿Quién es quién? con el Framework Open source de **[Reflex](https://reflex.dev/)**.
@@ -178,3 +182,24 @@ En un futuro mejoraremos el estilo del Frontend para que pueda ser mucho más ac
 En general nuestro mayor problema fueron las imagenes a la hora de ocultarlas al darle click en cada una.
 
 Mención honorable a los casos test.
+
+# **Preguntas IA**
+## **¿Qué herramienta de IA generativa usaste (nombre y versión)?**
+Hemos usado la propia IA que contiene Reflex en su página web para preguntarle acerca del funcionamiento del Framework.
+Al buscar la versión de la IA, no hay una versión establecida en la propia página como un "v2.0.5".
+
+## **¿Qué tipos de prompts proporcionaste?**
+Fueron prompts acerca de la insertación de imágenes, grids y el State de Reflex.
+
+## **¿Para qué usaste la herramienta?**
+Para hacer una búsqueda rápida en los docs del Framework.
+
+## **¿Cómo has utilizado o cambiado la salida de la IA generativa?**
+![AI](assets/AI.png)
+Nosotros empezamos a usar a la IA de Reflex al principio del proyecto para aprender sobre el uso e implementación de los componentes de este mismo. Es decir,
+en la parte de Frontend. 
+
+Como se puede ver en la foto de arriba, lo que hicimos fue ponerle el prompt a la IA acerca de imagenes en grids y esta te devuelve un texto.
+A veces ese texto ya existirá en los docs del Framework y no estará generado por la IA, de ahí a que sirve como búsqueda rápida.
+
+![Reflex Card](assets/reflex_card.png)
