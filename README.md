@@ -196,6 +196,7 @@ Para hacer una búsqueda rápida en los docs del Framework.
 
 ## **¿Cómo has utilizado o cambiado la salida de la IA generativa?**
 ![AI](assets/AI.png)
+
 Nosotros empezamos a usar a la IA de Reflex al principio del proyecto para aprender sobre el uso e implementación de los componentes de este mismo. Es decir,
 en la parte de Frontend. 
 
